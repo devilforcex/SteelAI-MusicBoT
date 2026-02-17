@@ -62,7 +62,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
           try {
             await msg.delete();
             deleted++;
-          } catch (err) {
+          } catch {
             // ignore per-message errors
           }
         }

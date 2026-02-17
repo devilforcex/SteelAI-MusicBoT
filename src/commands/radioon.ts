@@ -26,7 +26,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
     await interaction.deferReply({ ephemeral: true });
     const res = await connectAndPlay(poru, guildId, vcId, vcId, stream);
     await interaction.editReply({ content: res.message });
-  } catch (err) {
+  } catch {
     await interaction.editReply({ content: 'Failed to start radio.' });
   }
 }
