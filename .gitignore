@@ -1,0 +1,20 @@
+# Node / TS
+node_modules/
+dist/
+build/
+coverage/
+.nyc_output/
+.tmp/
+logs/
+
+# Env / secrets
+.env
+.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store

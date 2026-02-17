@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  bot:
+    build: .
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
+      - DATABASE_URL=${DATABASE_URL}
+      - LAVALINK_HOST=lavalink
+      - LAVALINK_PORT=2333
+      - LAVALINK_PASSWORD=youshallnotpass
+      - NODE_ENV=production
+    depends_on:
+      - db
+      - lavalink
+  lavalink:
+    image: fredboat/lavalink:dev
+    environment:
+      - SERVER_PORT=2333
+      - LAVALINK_SERVER_PASSWORD=youshallnotpass
+    ports:
+      - "2333:2333"
+    volumes:
+      - ./lavalink/application.yml:/opt/Lavalink/application.yml:ro
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=bot
+      - POSTGRES_PASSWORD=botpassword
+      - POSTGRES_DB=botdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
