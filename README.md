@@ -10,7 +10,14 @@
 - Slash команди (play/skip/queue/stop/volume и др.)
 - Auto-join радио поток (пример: Techno.FM)
 - Бутон/interaction поддръжка
+- Boogie /help меню: интерактивни категории + живи контрол бутони
 - Docker Compose с Lavalink и Postgres
+
+## /help (boogie меню)
+- /help връща embed с категории: Overview, Playback, Queue & Loop, Radio & Status, Utility & Admin.
+- Падащото меню сменя категорията и показва кратки описания на командите.
+- Бутоните отдолу са живи контроли (Play/Pause/Skip/Queue/Repeat/Shuffle/Volume ±/Now Playing).
+- Всичко е **ephemeral** (видимо само за теб).
 
 ## Как да стартираш (Docker)
 ```bash
@@ -33,13 +40,13 @@ RADIO_STREAM_URL=... docker compose up -d --build
 - `DATABASE_URL=postgresql://bot:botpassword@db:5432/botdb`
 - `LAVALINK_HOST=lavalink`
 - `LAVALINK_PORT=2333`
-- `LAVALINK_PASSWORD=youshallnotpass`
+- `LAVALINK_PASSWORD=change-me-strong`
 - `AUTOJOIN_VC_ID=voice_channel_id_for_autojoin`
 - `RADIO_STREAM_URL=http://stream.techno.fm/radio1-192k.mp3`
 - `NODE_ENV=production`
 
 ## Lavalink
-`lavalink/application.yml` е конфигуриран с YouTube/SoundCloud/Twitch/Vimeo/http източници и парола `youshallnotpass` (примерна — промени я в .env + application.yml при нужда).
+`lavalink/application.yml` е конфигуриран с YouTube/SoundCloud/Twitch/Vimeo/http източници и парола `change-me-strong` (примерна — смени я в .env + application.yml при нужда).
 
 ## Забележки за сигурност
 - Не комитвай реални токени/ID. .env е в .gitignore.

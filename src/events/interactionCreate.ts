@@ -119,5 +119,18 @@ export async function execute(interaction: Interaction) {
         await interaction.reply({ content: msg, ephemeral: true });
       }
     }
+    return;
+  }
+
+  if (interaction.isStringSelectMenu()) {
+    if (interaction.customId === 'help:categories') {
+      const selected = interaction.values?.[0] ?? 'overview';
+      const payload = help.buildHelpResponse?.(selected) ?? null;
+      if (!payload) {
+        await interaction.update({ content: 'Help payload недостъпно.', components: [] });
+        return;
+      }
+      await interaction.update(payload);
+    }
   }
 }
