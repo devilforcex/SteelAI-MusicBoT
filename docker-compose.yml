@@ -9,7 +9,7 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - LAVALINK_HOST=lavalink
       - LAVALINK_PORT=2333
-      - LAVALINK_PASSWORD=youshallnotpass
+      - LAVALINK_PASSWORD=${LAVALINK_PASSWORD:-change-me-strong}
       - NODE_ENV=production
     depends_on:
       - db
@@ -18,7 +18,7 @@ services:
     image: fredboat/lavalink:dev
     environment:
       - SERVER_PORT=2333
-      - LAVALINK_SERVER_PASSWORD=youshallnotpass
+      - LAVALINK_SERVER_PASSWORD=${LAVALINK_PASSWORD:-change-me-strong}
     ports:
       - "2333:2333"
     volumes:
