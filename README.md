@@ -2,6 +2,9 @@
 
 Първа версия на музикалния бот, създаден автоматично с OpenClaw агента **SteelAI** (с малки корекции) — и благодарности към приятеля **Steel**.
 
+## CI статус
+[![ci](https://github.com/devilforcex/SteelAI-MusicBoT/actions/workflows/ci.yml/badge.svg)](https://github.com/devilforcex/SteelAI-MusicBoT/actions/workflows/ci.yml)
+
 ## Характеристики
 - Discord.js музикален бот с Lavalink
 - Slash команди (play/skip/queue/stop/volume и др.)
