@@ -10,10 +10,10 @@
 - Slash команди (play/skip/queue/stop/volume и др.)
 - Auto-join радио поток (пример: Techno.FM)
 - Бутон/interaction поддръжка
-- Boogie /help меню: интерактивни категории + живи контрол бутони
+- /help меню: интерактивни категории + живи контрол бутони
 - Docker Compose с Lavalink и Postgres
 
-## /help (boogie меню)
+## /help меню
 - /help връща embed с категории: Overview, Playback, Queue & Loop, Radio & Status, Utility & Admin.
 - Падащото меню сменя категорията и показва кратки описания на командите.
 - Бутоните отдолу са живи контроли (Play/Pause/Skip/Queue/Repeat/Shuffle/Volume ±/Now Playing).

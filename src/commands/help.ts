@@ -37,7 +37,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
     id: 'overview',
     label: 'Overview',
     emoji: '🪩',
-    description: 'Boogie quickstart & where to look',
+    description: 'Бърз старт и къде са основните неща',
     tips: [
       'Избери категория от менюто, за да видиш командите по роли.',
       'Бутоните по-долу са живи контроли — можеш да ги ползваш без slash команда.',
@@ -103,7 +103,7 @@ const COLOR = 0xff7b00;
 function buildOverviewEmbed(): EmbedBuilder {
   const embed = new EmbedBuilder()
     .setColor(COLOR)
-    .setTitle('SteelAI MusicBoT — Boogie Help')
+    .setTitle('SteelAI MusicBoT — Help')
     .setDescription('🪩 Избери категорията от менюто, виж командите и натискай бутоните за бърз контрол.');
 
   embed.addFields(
@@ -182,7 +182,7 @@ export function buildHelpResponse(categoryId = 'overview') {
 
 export const data = new SlashCommandBuilder()
   .setName('help')
-  .setDescription('Boogie help меню с интерактивни контроли и категории.');
+  .setDescription('Help меню с интерактивни контроли и категории.');
 
 export async function execute(interaction: ChatInputCommandInteraction) {
   const payload = buildHelpResponse('overview');
